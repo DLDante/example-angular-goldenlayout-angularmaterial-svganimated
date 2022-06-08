@@ -1,0 +1,209 @@
+$_example-spinner-color-full: #4D8FD9;
+$_example-spinner-color-empty: #bdbdbd;
+$_example-spinner-color-grade1:#4d8fd9;
+$_example-spinner-color-grade2:#417ccb;
+$_example-spinner-color-grade3:#336abd;
+$_example-spinner-color-grade4:#0d47a1;
+
+p {
+  font-family: Lato;
+}
+
+.example-h1 {
+  color: white;
+}
+
+.example-h2 {
+  margin: 10px;
+}
+
+.deprecated-corner-ribbon {
+  &-container {
+    width: 140px;
+    height: 140px;
+    background-color: orange;
+    position: relative;
+  }
+  width: 84px;
+  height: 84px;
+  overflow: hidden;
+  position: absolute;
+  background-color: transparent;
+  top: 0px;
+  right: 0px;
+  &::before {
+    top: 0;
+    left: 0;
+  }
+  &::after {
+    bottom: 0;
+    right: 0;
+  }
+  &::before,
+  &::after {
+    position: absolute;
+    z-index: -1;
+    content: '';
+    display: block;
+    border: 5px solid red;
+    border-top-color: transparent;
+    border-right-color: transparent;
+  }
+  & span {
+    position: absolute;
+    display: block;
+    width: 119px;
+    padding: 12px 0;
+    background-color: red;
+    border: 1px solid black;
+    box-shadow: 0 2px 5px rgba(0,0,0,.1);
+    color: #fff;
+    font: 700 10px/1 'Lato', sans-serif;
+    text-shadow: 0 1px 1px rgba(0,0,0,.2);
+    text-transform: uppercase;
+    text-align: center;
+    left: -4px;
+    top: 10px;
+    transform: rotate(45deg);
+  }
+}
+
+@mixin svg-spinner-default() {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 75px;
+  height: 75px;
+  margin: 0px;
+  .busy-loader {
+    .tiles-container {
+      & path {
+        fill: $_example-spinner-color-empty;
+        fill-opacity: 1;
+        animation: example-spinner-embedded-svg 1s linear infinite;
+      }
+      & path.tile1 {
+        animation-delay: -0.875s;
+      }
+      & path.tile2 {
+        animation-delay: -0.75s;
+      }
+      & path.tile3 {
+        animation-delay: -0.625s;
+      }
+      & path.tile4 {
+        animation-delay: -0.5s;
+      }
+      & path.tile5 {
+        animation-delay: -0.375s;
+      }
+      & path.tile6 {
+        animation-delay: -0.25s;
+      }
+      & path.tile7 {
+        animation-delay: -0.125s;
+      }
+      & path.tile8 {
+        animation-delay: 0s;
+      }
+    }
+  }
+}
+
+@mixin svg-spinner-slower() {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 75px;
+  height: 75px;
+  margin: 0px;
+  .busy-loader {
+    .tiles-container {
+      & path {
+        fill: $_example-spinner-color-empty;
+        fill-opacity: 1;
+        animation: example-spinner-embedded-svg 2s linear infinite;
+      }
+      & path.tile1 {
+        animation-delay: -1.75s;
+      }
+      & path.tile2 {
+        animation-delay: -1.50s;
+      }
+      & path.tile3 {
+        animation-delay: -1.25s;
+      }
+      & path.tile4 {
+        animation-delay: -1s;
+      }
+      & path.tile5 {
+        animation-delay: -0.75s;
+      }
+      & path.tile6 {
+        animation-delay: -0.5s;
+      }
+      & path.tile7 {
+        animation-delay: -0.25s;
+      }
+      & path.tile8 {
+        animation-delay: 0s;
+      }
+    }
+  }
+}
+
+.example-spinner-embedded-svg-container {
+  &-fixed {
+    background-color: white !important;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 180px;
+    width: 100%;
+    .example-spinner-embedded-svg-content-default {
+      @include svg-spinner-default();
+    }
+    .example-spinner-embedded-svg-content-slower {
+      @include svg-spinner-slower();
+    }
+  }
+  &-responsive {
+    background-color: white !important;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    .example-spinner-embedded-svg-content-default {
+      @include svg-spinner-default();
+      width: 100%;
+      height: 100%;
+    }
+    .example-spinner-embedded-svg-content-slower {
+      @include svg-spinner-slower();
+    }
+  }
+}
+
+@keyframes example-spinner-embedded-svg {
+  0% {
+    fill: $_example-spinner-color-grade4;
+  }
+  15% {
+    fill: $_example-spinner-color-grade3;
+  }
+  30% {
+    fill: $_example-spinner-color-grade2;
+  }
+  45% {
+    fill: $_example-spinner-color-grade1;
+  }
+  65% {
+    fill: $_example-spinner-color-empty;
+  }
+  100% {
+    fill: $_example-spinner-color-empty;
+  }
+}
