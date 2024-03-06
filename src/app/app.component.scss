@@ -1,12 +1,51 @@
-$_example-spinner-color-full: #4D8FD9;
+$_example-spinner-color-full: #4d8fd9;
 $_example-spinner-color-empty: #bdbdbd;
-$_example-spinner-color-grade1:#4d8fd9;
-$_example-spinner-color-grade2:#417ccb;
-$_example-spinner-color-grade3:#336abd;
-$_example-spinner-color-grade4:#0d47a1;
+$_example-spinner-color-grade1: #4d8fd9;
+$_example-spinner-color-grade2: #417ccb;
+$_example-spinner-color-grade3: #336abd;
+$_example-spinner-color-grade4: #0d47a1;
 
 p {
   font-family: Lato;
+}
+
+
+.animated-line-loader {
+  margin-left: 50%;
+  margin-right: 1%;
+  height: 1px;
+  background-color: red;
+  width: 49%;
+  animation: bg-color-animation 3s cubic-bezier(.17,.67,.83,.67) infinite;
+
+  &-container {
+    min-width: 100%;
+    overflow: hidden !important;
+    display: inline-block;
+  }
+}
+
+@keyframes bg-color-animation {
+  0% {
+    margin-left: 0%;
+    width: 1%;
+    background-color: $_example-spinner-color-grade4;
+  }
+  15% {
+    background-color: $_example-spinner-color-grade3;
+  }
+  30% {
+    background-color: $_example-spinner-color-grade2;
+  }
+  45% {
+    background-color: $_example-spinner-color-grade1;
+  }
+  65% {
+    background-color: $_example-spinner-color-empty;
+  }
+  100% {
+    background-color: $_example-spinner-color-empty;
+  }
 }
 
 .example-h1 {
@@ -56,10 +95,10 @@ p {
     padding: 12px 0;
     background-color: red;
     border: 1px solid black;
-    box-shadow: 0 2px 5px rgba(0,0,0,.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     color: #fff;
     font: 700 10px/1 'Lato', sans-serif;
-    text-shadow: 0 1px 1px rgba(0,0,0,.2);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
     text-transform: uppercase;
     text-align: center;
     left: -4px;
@@ -128,7 +167,7 @@ p {
         animation-delay: -1.75s;
       }
       & path.tile2 {
-        animation-delay: -1.50s;
+        animation-delay: -1.5s;
       }
       & path.tile3 {
         animation-delay: -1.25s;

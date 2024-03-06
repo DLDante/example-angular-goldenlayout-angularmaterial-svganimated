@@ -11,6 +11,7 @@ import jQuery from 'jquery';
 import GoldenLayout from 'golden-layout';
 import { MainViewComponent } from './views/main-view/main-view.component';
 import { SecondViewComponent } from './views/second-view/second-view.component';
+import { ThirdViewComponent } from './views/third-view/third-view.component';
 
 type NgComponent<T> = { new (...params: any[]): T };
 
@@ -39,6 +40,10 @@ export class AppComponent {
             type: 'component',
             componentName: 'second',
           },
+          {
+            type: 'component',
+            componentName: 'third',
+          },
         ],
       },
     ],
@@ -55,6 +60,7 @@ export class AppComponent {
     //reg components. this components must registred in angular as entryComponents (see app.module.ts)
     this.registerComponent('main', MainViewComponent);
     this.registerComponent('second', SecondViewComponent);
+    this.registerComponent('third', ThirdViewComponent);
 
     this.layout.init();
   }

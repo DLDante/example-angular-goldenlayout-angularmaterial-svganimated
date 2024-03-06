@@ -8,6 +8,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { MainViewComponent } from './views/main-view/main-view.component';
 import { SecondViewComponent } from './views/second-view/second-view.component';
+import { ThirdViewComponent } from './views/third-view/third-view.component';
 
 @NgModule({
   imports: [
@@ -20,14 +21,16 @@ import { SecondViewComponent } from './views/second-view/second-view.component';
   declarations: [
     AppComponent,
     MainViewComponent,
-    SecondViewComponent
+    SecondViewComponent,
+    ThirdViewComponent
   ],
   bootstrap: [
     AppComponent
   ],
   entryComponents: [
     MainViewComponent,
-    SecondViewComponent
+    SecondViewComponent,
+    ThirdViewComponent
   ]
 })
 export class AppModule { }
