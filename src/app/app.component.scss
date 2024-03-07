@@ -29,22 +29,22 @@ p {
   0% {
     margin-left: 0%;
     width: 1%;
-    background-color: $_example-spinner-color-grade4;
+    background-color: $_example-spinner-color-empty;
   }
   15% {
-    background-color: $_example-spinner-color-grade3;
+    background-color: $_example-spinner-color-grade1;
   }
   30% {
     background-color: $_example-spinner-color-grade2;
   }
   45% {
-    background-color: $_example-spinner-color-grade1;
+    background-color: $_example-spinner-color-grade3;
   }
   65% {
-    background-color: $_example-spinner-color-empty;
+    background-color: $_example-spinner-color-grade4;
   }
   100% {
-    background-color: $_example-spinner-color-empty;
+    background-color: $_example-spinner-color-full;
   }
 }
 
